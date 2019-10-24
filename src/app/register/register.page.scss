@@ -1,0 +1,54 @@
+
+.new-background-color{
+
+    --background: var(--ion-backgrund-color);
+}
+ion-header {
+  
+    position: unset;
+   
+}
+ion-input{
+    text-align: center
+}
+.button-gradient{
+    --background: var(--ion-button-gradient);
+    margin-top: 25px;
+}
+
+p{
+    color:var(--ion-color-danger);
+    font-size: 13px;
+}
+.font-size-12{
+   
+    margin:auto;
+    background-color: rgb(243, 243, 243);
+    font-size:12px;
+    padding:22px;
+    border-radius:12px;
+}
+ion-input[type="text"],[type="password"],[type="number"],[type="tel"]{  
+    text-align: left; 
+
+} 
+.mrg-top-80{ 
+    color: var(--ion-color-light);
+ 
+    text-align: center;
+    margin-top: 80px;
+}
+
+ion-img{
+    width: 30%;
+    height: 30%;
+   
+    margin: auto;
+    
+}
+.clr-light-drak{
+    color: var(--ion-color-medium-shade);
+    //color:rgb(94, 93, 93)
+}
+
+

@@ -1,0 +1,44 @@
+
+ion-content{
+    top:20px;
+}
+.button-gradient{
+    --background: var(--ion-button-gradient);
+    margin-top: 30px;
+
+}
+.button-gradient1{
+    --background: var(--ion-button-gradient);
+    margin-top: 10px;
+}
+h2 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color:rgb(83, 83, 83);
+    font-size: 20px;
+    //margin-top: 30px;
+    
+}
+
+h2:before,
+h2:after {
+    content: '';
+    border-top: 1px solid rgb(83, 83, 83);
+    margin: 0 20px 0 20px;
+    flex: 1 0 20px;
+    
+}
+
+h2:after {
+    // margin: 0 0 0 20px;
+    margin: 0 20px 0 20px;
+}
+
+p{
+    //color:rgb(165, 68, 29)
+    color: var(--ion-color-danger);
+    font-size: 13px;
+}

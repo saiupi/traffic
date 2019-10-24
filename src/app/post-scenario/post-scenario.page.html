@@ -1,0 +1,113 @@
+<ion-header>
+
+  <ion-toolbar color="medium">
+    <ion-title>Post Scenaria</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+
+  <ion-slides height="50%">
+
+    <ion-slide>
+
+      <ion-img width="80" height="90" src="{{imagePreview.imagePreview}}"></ion-img>
+    </ion-slide>
+  </ion-slides>
+
+  <!-- <ion-item>
+      <ion-input clearInput type="number" placeholder="MobileNumber" formControlName="mobileNum" [ngClass]="{ 'is-invalid': submitted && f.mobileNum.errors }"></ion-input>
+      <div *ngIf="submitted && f.mobileNum.errors" class="invalid-feedback">
+          <div *ngIf="f.mobileNum.errors.required"><p>mobileNumber is required</p></div>
+          <div *ngIf="registerForm.controls['mobileNum'].errors.pattern">
+            <p>Numbers  not required</p>
+          </div>
+      </div>
+    </ion-item> -->
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit(registerForm)">
+    <ion-list padding>
+
+      <ion-item>
+        <ion-label position="floating">Location</ion-label>
+
+
+        <ion-input formControlName="location" [(ngModel)]="geLocations"
+          [ngClass]="{ 'is-invalid': submitted && f.location.errors }" disabled="true" >
+
+        </ion-input>
+
+      </ion-item>
+      <div *ngIf="submitted && f.location.errors" class="invalid-feedback">
+        <div *ngIf="f.location.errors.required">
+          <p>location is required</p>
+        </div>
+
+      </div>
+      <ion-item>
+        <ion-label position="floating">Issue Date</ion-label>
+        <ion-input formControlName="issueDate" [ngModel]="locationTime | date:'medium'"
+          (ngModelChange)="locationTime = $event" [value]="locationTime | date:'medium'" required name="locationTime"
+          [ngClass]="{ 'is-invalid': submitted && f.issueDate.errors }" disabled="true"></ion-input>
+
+
+      </ion-item>
+      <div *ngIf="submitted && f.issueDate.errors" class="invalid-feedback">
+        <div *ngIf="f.issueDate.errors.required">
+          <p>issueDate is required</p>
+        </div>
+
+      </div>
+      <ion-item>
+        <ion-label>Select offence Type</ion-label>
+        <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One"
+          formControlName="offenceCategory" [ngClass]="{ 'is-invalid': submitted && f.offenceCategory.errors }">
+          <ion-select-option *ngFor="let offence of offencetype;">{{offence.offences}}</ion-select-option>
+
+          <!-- <ion-select-option value="blonde">one way</ion-select-option>
+          <ion-select-option value="blonde">signal jump</ion-select-option> -->
+
+
+        </ion-select>
+
+      </ion-item>
+      <div *ngIf="submitted && f.offenceCategory.errors" class="invalid-feedback">
+        <div *ngIf="f.offenceCategory.errors.required">
+          <p>offenceCategory is required</p>
+        </div>
+
+      </div>
+
+      <!-- <ion-item>
+        <ion-label position="floating">Issue Time</ion-label>
+        <ion-input displayFormat="HH:mm"  [(ngModel)]="myTime" formControlName="issueTime"></ion-input> 
+        
+
+      </ion-item> -->
+      <!-- <ion-item>
+        <ion-label position="floating">File</ion-label>
+        <ion-input type="file" placeholder="files" (change)="onFileUpload($event)"></ion-input>
+      </ion-item> -->
+    </ion-list>
+    <div align="center" padding>
+      <ion-button type="submit" size="default" expand="block" shape="round" class="button-gradient">Continue
+      </ion-button>
+
+    </div>
+  </form>
+
+
+  <!-- {{dateTime | date:'medium'}} -->
+ <!-- {{ReverseGeocodingResults}}  -->
+  <!-- <input type="stringDateModel"  [ngModel]="myDate | date:'dd-MM-yyyy'" 
+                 (ngModelChange)="myDate = $event"> -->
+<button (click)="lg()">l</button>
+
+
+<!-- {{geocodingResults}} -->
+</ion-content>

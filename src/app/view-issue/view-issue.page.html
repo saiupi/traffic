@@ -1,0 +1,76 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>view-issue</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<!-- <ion-header>
+
+    <ion-toolbar color="medium">
+      <ion-title>View Issue</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="home"></ion-back-button>
+      </ion-buttons>
+  
+    </ion-toolbar>
+  </ion-header> -->
+
+ <ion-content style="padding:20px">
+    <!-- <ion-list>
+        <ion-item>
+            <ion-thumbnail slot="start" style="width:150px;height: 100px;">
+                <img src="\assets\frfic2.jpg">
+              </ion-thumbnail>
+           <h2>Addrass</h2><br>
+          <p>manikonda</p><br>
+          <p>hyderabad</p>
+          
+        </ion-item>
+      </ion-list>
+</ion-content> -->
+<!-- <div  *ngFor="let person of profiles">
+   {{person.imageName}}
+   <img [src]="'data:image/jpg;base64,'+person.image" style="height:150px;width:150px" />
+ <img [src]="person.image">
+ </div> -->
+  <!-- <ion-card>
+    <ion-item *ngFor="let view of profiles">
+        <ion-thumbnail slot="start">
+            <img [src]="'data:image/jpg;base64,'+view.image" >
+          </ion-thumbnail>
+      <ion-col  text-wrap>
+        <P text-wrap style="font-size: 13px;">offence Type :- {{view.offenceCategory}}</P>
+        <p text-wrap style="font-size: 13px;">Location :- {{view.location}}</p>
+        <p text-wrap style="font-size: 13px;">Date :- {{view.issueDate}}</p>
+        <p text-wrap style="font-size: 13px;">Time :- {{view.issueTime}}</p>
+   </ion-col>
+      
+    </ion-item>
+  </ion-card> -->
+  
+  <ion-list>
+        <ion-item (click)="getAllReports()">
+          <ion-label>Get All Reports</ion-label>
+        </ion-item>
+  
+        <ion-item (click)="pendingReports()">
+          <ion-label>Pending Reports</ion-label>
+        </ion-item>
+  
+        <ion-item (click)="rejectedReports()">
+          <ion-label>Rejected Reports</ion-label>
+        </ion-item>
+  
+        <ion-item (click)="approvedReports()" no-lines>
+          <ion-label>Approved Reports</ion-label>
+        </ion-item>
+  </ion-list>
+  
+    <!-- <ion-list>
+      <ion-list-header>View Issues</ion-list-header>
+      <button ion-item (click)="getAllReports()">GetAll Reports</button>
+      <button ion-item (click)="pendingReports()">Pending Reports</button>
+      <button ion-item (click)="rejectedReports()">Rejected Reports</button>
+      <button ion-item (click)="approvedReports()">Approved Reports</button>
+    </ion-list> -->
+</ion-content>
+

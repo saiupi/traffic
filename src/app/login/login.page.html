@@ -1,0 +1,93 @@
+<ion-header>
+
+  <ion-toolbar color="medium">
+    <ion-title>Login</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="myview">
+    <div class="layer">
+
+
+      <div class="mrg-top-80">
+        <ion-img src="\assets\Symbol.png" align="center"></ion-img>
+        <h2>Traffic<br>Sudharo</h2>
+      </div>
+      <div class="mrg-top-81">
+        <h2 style="font-size: 30px">Get Started</h2>
+       
+      </div>
+      
+    </div>
+  </div>
+  <!-- <p *ngIf="message" >{{message}}</p> -->
+ 
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)" padding>
+
+    <ion-list>
+      <ion-item>
+        <ion-input PhoneNumber clearInput type="text"   maxlength="10" placeholder="MobileNumber" formControlName="mobileNum" [ngClass]="{ 'is-invalid': submitted && f.mobileNum.errors }"></ion-input>
+
+        <div *ngIf="submitted && f.mobileNum.errors" class="invalid-feedback" >
+            <div *ngIf="f.mobileNum.errors.required"><p>MobileNumber is Required</p></div>
+            <!-- <div *ngIf="registerForm.controls['phone'].hasError('maxlength')"><p> 10 mobileNumber is required</p></div> -->
+            <p *ngIf="submitted && registerForm.controls.mobileNum.errors.maxLength">Enter atleast 10
+              characters</p>
+            <!-- <div *ngIf="registerForm.controls['mobileNum'].errors.pattern">
+              <p>Numbers  not required</p>
+            </div> -->
+        </div>
+      </ion-item>
+      
+      <ion-item>
+        <ion-input   clearInput type="password" placeholder="Password" formControlName="password" [type]="passwordType" clearOnEdit="false" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"></ion-input>
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required"><p>Password is Required</p></div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+      <ion-icon  [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+      </ion-item>
+     
+    </ion-list>
+    <!-- <ion-button type="submit" shape="round" class="button-gradient" expand="block" routerLink="/dashboard"  padding>Submit</ion-button> -->
+    <ion-button type="submit"   expand="block" shape="round" class="button-gradient">LOGIN</ion-button>
+    <!-- //<p >{{errorMsg}}</p> -->
+  
+  </form>
+
+  <!-- <div>
+      <div >
+          <h3>Log In</h3>
+          <p *ngIf="message">{{message}}</p>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div  [ngClass]="{ 'has-error': submitted && f.userName.errors }">
+                <label for="userName" >userName</label>
+                <div >
+                    <input type="text" formControlName="userName" />
+                    <div *ngIf="submitted && f.userName.errors">
+                          <div *ngIf="f.userName.errors.required">userName is required</div>
+                    </div>
+                </div>
+            </div>
+            <div  [ngClass]="{ 'has-error': submitted && f.password.errors }">
+              <label for="password" >Password</label>
+              <div >
+                  <input type="password" formControlName="password"/>
+                  <div *ngIf="submitted && f.password.errors">
+                          <div *ngIf="f.password.errors.required">Password is required</div>
+                  </div>
+              </div>
+            </div>
+            <div >
+              <button  type="submit">Login</button>
+            </div>
+        </form>
+      </div>
+  </div> -->
+  <!-- <ion-button (click)="presentLoading()"></ion-button> -->
+</ion-content>

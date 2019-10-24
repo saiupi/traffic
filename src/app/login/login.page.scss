@@ -1,0 +1,60 @@
+ion-content.background{
+    --background: url(../../assets/frfic2.jpg)  0 0/100% 100% no-repeat;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.myview {
+   
+    height: 50%;
+    background-repeat: no-repeat ;
+    background-size:cover;
+    position: relative;
+   background-image: url('../../assets/Gr.png');
+      
+    
+}
+.layer {
+    // background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: -40px;
+    left: 0;
+    height: 80%;
+    width: 100%;
+}
+.mrg-top-80{ 
+    color: var(--ion-color-light);
+ 
+    text-align: center;
+    margin-top: 70px;
+}
+
+ion-img{
+    width: 30%;
+    height: 30%;
+    margin: auto;
+    
+}
+.mrg-top-81{
+    color: var(--ion-color-light);
+     text-align: center;
+     margin-top: 70px;
+}
+
+h2 {
+    margin-top: -34px;
+    font-size: 24px;
+    letter-spacing: 1.5px;
+}  
+
+.button-gradient{
+    --background: var(--ion-button-gradient);
+      margin-top:40px;
+  
+   
+}
+
+p{
+    //color:rgb(165, 68, 29)
+    color: var(--ion-color-danger);
+    font-size: 13px;
+}

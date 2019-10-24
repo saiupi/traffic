@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar color="medium">
+
+    <ion-title align="center">
+      Traffic Sudharo
+    </ion-title>
+    <ion-buttons slot="end" (click)="takePictures()" style="font-size:22px;">
+      <ion-icon name="camera"></ion-icon>
+      </ion-buttons> 
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides  height="50%">
+
+    <ion-slide>
+      <!-- <ion-img width="80" height="90" src="{{imagePreview}}" alt="sss"  (click)="clickImage()"></ion-img> -->
+
+      <img [src]="base64Image" *ngIf="base64Image" />
+
+    </ion-slide>
+  </ion-slides>
+  <!-- <div *ngFor="let im of imagess">
+      <ion-img width="80" height="90" src="{{im.pic}}" ></ion-img>
+  </div> -->
+  <!-- accury{{locationaccuracy}} -->
+ <!-- {{locationTime | date:'medium'}}
+  {{stringDateModel}}
+  {{ReverseGeocodingResults}}
+  {{status}} -->
+
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4 align="center">
+          <div (click)="HomeScreen()">
+            <ion-img src="\assets\icon sets v_1-02.png" align="center" class="img-size"></ion-img>
+            <h6>Home</h6>
+          </div>
+
+
+        </ion-col>
+        <ion-col col-4 align="center" class="vl">
+
+          <div (click)="PostScenario()">
+
+            <ion-img src="\assets\icon sets v_1-07.png" align="center" class="img-size"></ion-img>
+            <h6>Post Issue</h6>
+          </div>
+
+        </ion-col>
+        <ion-col col-4 align="center" class="vl">
+          <div >
+
+            <ion-img src="\assets\icon sets v_1-12.png" align="center" class="img-size"   (click)="clickImage()">
+            
+            </ion-img>
+            <h6>Save</h6>
+
+          </div>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-toolbar>
+</ion-footer>

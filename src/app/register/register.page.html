@@ -1,0 +1,125 @@
+<ion-header>
+
+  <ion-toolbar class="new-background-color">
+    <ion-title color="medium">Registration</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" color="medium"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+    <ion-list>
+      <ion-item>
+        <!-- <ion-label position="floating">First Name</ion-label> -->
+        <ion-input clearInput type="text" placeholder="First Name" formControlName="firstName"
+          [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"></ion-input>
+        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+          <p *ngIf="f.firstName.errors.required">FirstName is Required</p>
+          <p *ngIf="registerForm.controls['firstName'].errors.pattern">
+            Numbers not required
+          </p>
+        </div>
+      </ion-item>
+      <ion-item>
+        <!-- <ion-label position="floating">Last Name</ion-label> -->
+        <ion-input clearInput type="text" placeholder="Last Name" formControlName="lastName"
+          [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"></ion-input>
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+          <p *ngIf="f.lastName.errors.required">LastName is Required</p>
+          <p *ngIf="registerForm.controls['lastName'].errors.pattern">
+            Numbers not required
+          </p>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <!-- <ion-label position="floating">Mobile Number</ion-label> -->
+        <ion-input RegisterNumber clearInput type="text" maxlength="10" placeholder="Mobile Number"
+          formControlName="mobileNum" [ngClass]="{ 'is-invalid': submitted && f.mobileNum.errors }"></ion-input>
+        <div *ngIf="submitted && f.mobileNum.errors" class="invalid-feedback">
+          <p *ngIf="f.mobileNum.errors.required">MobileNumber is Required</p>
+          <p *ngIf="registerForm.controls['mobileNum'].errors.pattern">
+            Numbers not required
+          </p>
+        </div>
+      </ion-item>
+      <ion-item> 
+        <ion-label class="clr-light-drak">Date of Birthday</ion-label>
+        <ion-datetime [ngModel]="startDate | date:'yyyy-MM-dd'" formControlName="dob"
+          (ngModelChange)="startDate = $event" type="date" name="startDate"
+          [ngClass]="{ 'is-invalid': submitted && f.dob.errors }"></ion-datetime>
+        <div *ngIf="submitted && f.dob.errors" class="invalid-feedback">
+          <p *ngIf="f.dob.errors.required">DOB is required</p>
+          <p *ngIf="registerForm.controls['dob'].errors.pattern">
+            Numbers not required
+          </p>
+        </div>
+
+      </ion-item>
+      <!-- <ion-item>
+            <ion-input clearInput type="text"  placeholder="Gender" formControlName="gender" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }"></ion-input>
+            <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+              <p *ngIf="f.gender.errors.required">gender is required</p>
+              <p *ngIf="registerForm.controls['gender'].errors.pattern">
+                Numbers  not required
+              </p>
+          </div>
+          </ion-item> -->
+      <ion-item>
+        <ion-label class="clr-light-drak">Gender</ion-label>
+        <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One"
+          formControlName="gender" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }">
+          <ion-select-option value="Male">Male</ion-select-option>
+          <ion-select-option value="FeMale">Female</ion-select-option>
+        </ion-select>
+        <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+          <p *ngIf="f.gender.errors.required">Gender is Required</p>
+          <p *ngIf="registerForm.controls['gender'].errors.pattern">
+            Numbers not required
+          </p>
+        </div>
+      </ion-item>
+      <ion-item>
+        <!-- <ion-label position="floating">email</ion-label> -->
+        <ion-input clearInput type="text" placeholder="Email" formControlName="email"
+          [ngClass]="{ 'is-invalid': submitted && f.email.errors }"></ion-input>
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <p *ngIf="f.email.errors.required">Email is Required</p>
+          <p *ngIf="registerForm.controls['email'].errors.pattern">
+            Numbers not required
+          </p>
+        </div>
+      </ion-item>
+      <ion-item>
+        <!-- <ion-label position="floating">password</ion-label> -->
+        <ion-input clearInput type="password" placeholder="Password" formControlName="password" [type]="passwordType"
+          clearOnEdit="false" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"></ion-input>
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <p *ngIf="f.password.errors.required">Password is Required</p>
+          <p *ngIf="registerForm.controls['password'].errors.pattern">
+            Password not Required
+          </p>
+        </div>
+        <ion-icon [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()' slot="end"></ion-icon>
+      </ion-item>
+
+    </ion-list>
+    <ion-button type="submit" size="large" expand="block" shape="round" class="button-gradient">CREATE ACCOUNT
+    </ion-button>
+
+  </form>
+  <!-- <div padding>
+    <p >{{errorMsg}}</p>
+   
+  </div> -->
+  <!-- <ion-item>
+    <ion-input [ngModel]="startDate | date:'yyyy-MM-dd'" (ngModelChange)="startDate = $event" type="date" name="startDate">
+</ion-input>
+  </ion-item> -->
+  <!-- <p >{{errorMsg}}</p> -->
+</ion-content>

@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar color="medium">
+    <ion-title>offline-post-issue</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <ion-item>
+        <ion-label position="floating">Issue Date</ion-label>
+        <ion-input formControlName="issueDate" [ngModel]="locationTime | date:'medium'" (ngModelChange)="locationTime = $event"
+        [value]="locationTime | date:'medium'"  required name="locationTime" [ngClass]="{ 'is-invalid': submitted && f.issueDate.errors }"></ion-input>
+
+        
+    </ion-item>
+    <div *ngIf="submitted && f.issueDate.errors" class="invalid-feedback">
+        <div *ngIf="f.issueDate.errors.required"><p>issueDate is required</p></div>
+       
+    </div> -->
+  <ion-slides pager height="50%">
+
+    <ion-slide>
+      <img [src]="imagePreview" (load)="loaded($event)">
+    </ion-slide>
+
+  </ion-slides>
+
+  <form [formGroup]="profileForm" (ngSubmit)="OnUploadFile()">
+    <ion-list padding>
+      <ion-item>
+        <ion-label position="floating">File</ion-label>
+        <ion-input type="file" placeholder="files" (change)="onFileUpload($event)"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Select offence Type</ion-label>
+        <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One"
+          formControlName="offenceCategory" [ngClass]="{ 'is-invalid': submitted && f.offenceCategory.errors }">
+          <ion-select-option *ngFor="let offence of offencetype;">{{offence.offences}}</ion-select-option>
+
+        </ion-select>
+      </ion-item>
+      <div *ngIf="submitted && f.offenceCategory.errors" class="invalid-feedback">
+        <div *ngIf="f.offenceCategory.errors.required">
+          <p>offenceCategory is required</p>
+        </div>
+
+      </div>
+      <ion-item>
+        <ion-label position="floating">Location</ion-label>
+        <ion-input formControlName="location" [ngClass]="{ 'is-invalid': submitted && f.location.errors }"></ion-input>
+      </ion-item>
+      <div *ngIf="submitted && f.location.errors" class="invalid-feedback">
+        <div *ngIf="f.location.errors.required">
+          <p>location is required</p>
+        </div>
+      </div>
+      <ion-item>
+        <ion-label position="floating">Issue Date</ion-label>
+        <!-- <ion-input  formControlName="issueDate"  [(ngModel)]="dateTime" ></ion-input> -->
+        <ion-input formControlName="issueDate" [ngModel]="dateTime | date:'medium'" (ngModelChange)="dateTime = $event"
+          [value]="dateTime | date:'medium'" required name="dateTime"
+          [ngClass]="{ 'is-invalid': submitted && f.issueDate.errors }"></ion-input>
+
+      </ion-item>
+      <div *ngIf="submitted && f.issueDate.errors" class="invalid-feedback">
+        <div *ngIf="f.issueDate.errors.required">
+          <p>issueDate is required</p>
+        </div>
+      </div>
+
+      <!-- <ion-item>
+        <ion-label position="floating">Issue Time</ion-label>
+        <ion-input formControlName="issueTime" [ngModel]="dateTime | date:'HH:mm'" (ngModelChange)="dateTime = $event"
+          [value]="dateTime | date:'HH:mm'" required name="dateTime"></ion-input>
+      </ion-item> -->
+
+
+    </ion-list>
+    <ion-button (click)="downloadImage()" id="a" align="center">image</ion-button>
+    <div padding>
+      <ion-button type="submit" shape="round" class="button-gradient" expand="block">Submit</ion-button>
+    </div>
+  </form>
+
+  <!-- <input type="file" id="file" multiple 
+  (change)="getFileDetails($event)"> -->
+
+  <!-- <input (change)="getFileDetails($event)" type="file"> -->
+
+gps{{gpsLongitude}}{{gpsLongitude}}
+{{geocodingResults}}
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-header>
+
+    <ion-toolbar color="medium">
+      <ion-title>Post</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="home"></ion-back-button>
+      </ion-buttons>
+  
+    </ion-toolbar>
+  </ion-header>
+<ion-content padding>
+
+      <div color="danger"><p style="color:rgb(190, 7, 7)">If user want to get benefits of reward point you must register yourself</p></div>
+
+    <div align="right">
+    <ion-button size="default"  shape="round" class="button-gradient" (click)="continue()">Continue anyway</ion-button>
+  </div>
+ 
+  
+  
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" padding>
+
+      <ion-list>
+        <ion-item>
+          <ion-input clearInput type="number" placeholder="User Name" formControlName="mobileNum" [ngClass]="{ 'is-invalid': submitted && f.mobileNum.errors }"></ion-input>
+          <div *ngIf="submitted && f.mobileNum.errors" class="invalid-feedback">
+            <div *ngIf="f.mobileNum.errors.required"><p>MobileNum is Required</p></div>
+            <div *ngIf="registerForm.controls['mobileNum'].errors.pattern">
+              Numbers  not required
+            </div>
+        </div>
+        </ion-item>
+        <ion-item>
+          <ion-input clearInput type="password" placeholder="Password" formControlName="password"  [type]="passwordType" clearOnEdit="false" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"></ion-input>
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required"><p>Password is Required</p></div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+        <ion-icon   [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>        </ion-item>
+  
+      </ion-list>
+      <!-- <ion-button type="submit" shape="round" class="button-gradient" expand="block" routerLink="/dashboard"  padding>Submit</ion-button> -->
+      <ion-button type="submit" size="default" expand="block" shape="round" class="button-gradient">LOGIN</ion-button>
+  
+    </form>
+    <h2>OR</h2>
+    <div  padding>
+      <ion-button type="submit" size="default" expand="block" shape="round" (click)="register()" class="button-gradient1" style="margin-top: 10px;">Register</ion-button>
+
+    </div>
+    <!-- <ion-button shape="round" color="tertiary" expand="block" (click)="register()"  class="button-gradient" >Register</ion-button> -->
+
+    <button (click)="dashboard()">db</button>
+
+</ion-content>

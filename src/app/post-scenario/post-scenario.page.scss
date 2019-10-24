@@ -1,0 +1,23 @@
+.swiper-container-android .swiper-slide, .swiper-wrapper {
+  
+    height: 216px;
+}
+.swiper-container-ios .swiper-slide, .swiper-wrapper {
+  
+    height: 216px;
+}
+.button-gradient{
+    --background: var(--ion-button-gradient);
+   
+}
+.list-ios {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: -1px;
+    margin-bottom: 0;
+ 
+}
+p{
+    color: var(--ion-color-danger);
+}
+

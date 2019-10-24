@@ -1,0 +1,65 @@
+<!-- <ion-header>
+
+  <ion-toolbar>
+    <ion-title>home-screen</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="myview">
+    <div class="layer">
+
+
+      <div class="mrg-top-80">
+        <ion-img src="\assets\Symbol.png" align="center"></ion-img>
+        <h2>Traffic<br>Sudharo</h2>
+      </div>
+      <div class="mrg-top-81">
+        <h2>Be the Hero <br>Never wait for one</h2>
+        <h3></h3>
+      </div>
+      <div align="center">
+        <ion-button shape="round" color="light" class="btn-padding">
+          <ion-note>Get Started</ion-note>
+        </ion-button>
+
+      </div>
+    </div>
+  </div>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="signIn()" expand="full" color="dark" fill="clear"><b>Sign In</b></ion-button>
+      </ion-col>
+
+      <ion-col class="vl">
+        <ion-button (click)="signUp()" expand="full" fill="clear" color="tertiary"><b>Sign Up</b></ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div align="center">
+    <ion-button fill="clear" color="dark" (click)="skip()"><b style="margin-top: -10px;
+        font-size: 17px;">Skip</b></ion-button>
+  </div>
+<!-- <div>
+  <ul *ngFor="let product of productstype">
+    <li>{{product.title}}</li>
+    <li>{{product.id}}</li>
+  </ul>
+</div> -->
+
+</ion-content>
+
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-title  align="center">
+    
+    </ion-title>
+  </ion-toolbar>
+</ion-footer> -->

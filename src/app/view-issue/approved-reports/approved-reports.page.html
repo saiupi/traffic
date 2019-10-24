@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-toolbar class="new-background-color">
+    <ion-title color="medium">Approved Issue</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" color="medium"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="!issues || issues.length === 0">
+    <div class="clr-red"  align="center">
+      <ion-img src="\assets\empty2.jfif" style="width: 110px; height: 110px;"></ion-img>
+      <p  align="center">0 Issues</p>
+    </div>
+  </div>
+  <div *ngIf="issues || issues.length > 0">
+    <div *ngFor="let view of issues">
+
+      <ion-card>
+        <ion-img [src]="'data:image/jpg;base64,'+view.image"></ion-img>
+      </ion-card>
+      <div>
+        <ion-button color="medium" size="small" shape="round" class="mrgn-top-30">{{view.offenceCategory}}</ion-button>
+      </div>
+      <!-- <ion-list lines="none"> -->
+      <ion-list>
+
+        <ion-item style="margin-top: -20px">
+          <div slot="start" class="mrgn-top-20">
+            <p text-wrap style="font-size: 13px;"> {{view.location}}</p>
+            <p text-wrap style="font-size: 13px;">{{view.issueTime}}</p>
+            <p text-wrap style="font-size: 13px;"> {{view.issueDate}}</p>
+          </div>
+         
+          <!-- <div slot="end">
+
+            <p text-wrap style="font-size: 13px;">{{view.issueTime}}</p>
+            <p text-wrap style="font-size: 13px;"> {{view.issueDate}}</p>
+          </div> -->
+        </ion-item>
+
+      </ion-list>
+    </div>
+  </div>
+
+</ion-content>

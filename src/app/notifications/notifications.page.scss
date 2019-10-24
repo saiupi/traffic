@@ -1,0 +1,22 @@
+.img-size{
+    width: 25%;
+    height: 25%;
+    margin: auto;
+}
+p.notif {
+    position: relative;
+    display: block;
+    height: 50px;
+    width: 50px;
+    background: url('/assets/icon sets v_1-32.png');
+    background-size: contain;
+    text-decoration: none;
+    margin-top: 170px;
+  }
+  .num {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-weight: bold;
+    color: #ee1010;
+  }

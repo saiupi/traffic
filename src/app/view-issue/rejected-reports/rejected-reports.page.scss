@@ -1,0 +1,24 @@
+.img-size{
+    height:30%;
+    width: 100%;
+    border-radius:10px;
+}
+.mrgn-top-30{
+      margin-left: 120px;
+       margin-top: -47px;
+      align-items: center;
+}
+.new-background-color{
+
+    --background: var(--ion-backgrund-color);
+}
+ion-header {
+  
+    position: unset;
+   
+}
+.clr-red{
+    color:rgb(255, 136, 0);
+    font-size: 20px;
+    margin-top: 50%;
+    }
